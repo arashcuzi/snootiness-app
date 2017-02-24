@@ -5,6 +5,11 @@ node_js:
   - v5
   - v4
   - '0.12'
+addons:
+  - ssh_known_hosts: 104.236.25.166
+cache:
+  directories:
+    - node_modules
 before_install:
   - openssl aes-256-cbc -K $encrypted_88d079db7ad0_key -iv $encrypted_88d079db7ad0_iv -in deploy_key.enc -out deploy_key -d
   - rm deploy_key.enc # Don't need it anymore
