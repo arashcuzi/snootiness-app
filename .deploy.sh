@@ -11,6 +11,8 @@ if [ $TRAVIS_BRANCH == 'master' ] ; then
     git add .
     git commit -m "Deploy"
     git push --force deploy master
+
+    ssh deploy@104.236.25.166 'pm2 start /var/www/snootiness-app/.'
 else
     echo "Not deploying, since this branch isn't master."
 fi
